@@ -33,14 +33,15 @@ public class FreakStormTopology {
 		
 		
 		TopologyBuilder builder = new TopologyBuilder();		
-		builder.setSpout("readerEven", new FreakEvenNumberSpout(),10);
-		builder.setSpout("readerOdd", new FreakOddNumberSpout(),10);
+		builder.setSpout("readerEven", new FreakEvenNumberSpout());
+		builder.setSpout("readerOdd", new FreakOddNumberSpout());
+		builder.setBolt("even_bolt", new FreakEvenBolt()).shuffleGrouping("readerEven");
+		builder.setBolt("odd_bolt", new FreakOddBolt()).shuffleGrouping("readerOdd");
+		builder.setBolt("sink", new FreakSink()).shuffleGrouping("even_bolt").shuffleGrouping("odd_bolt");
+		//builder.setBolt("root_bolt", new FreakFilterBolt(),2).shuffleGrouping("readerEven").shuffleGrouping("readerOdd");
 		
-		
-		builder.setBolt("root_bolt", new FreakFilterBolt(),20).shuffleGrouping("readerEven").shuffleGrouping("readerOdd");
-		
-		builder.setBolt("even_bolt", new FreakEvenBolt(),20).shuffleGrouping("root_bolt");
-		builder.setBolt("odd_bolt", new FreakOddBolt(),20).shuffleGrouping("root_bolt");
+		//builder.setBolt("even_bolt", new FreakEvenBolt()).shuffleGrouping("root_bolt");
+		//builder.setBolt("odd_bolt", new FreakOddBolt(),20).shuffleGrouping("root_bolt");
 		/*builder.setBolt("sink", new FreakSink()).shuffleGrouping("even_bolt").shuffleGrouping("odd_bolt");*/
 		
 		
