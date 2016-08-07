@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package foss.freak.spout;
+
+import org.apache.storm.topology.IRichSpout;
+
+/**
+ * @author codenamefreak
+ *
+ */
+public class FreakSpout implements IRichSpout{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1656715194146164777L;
+
+	
+}

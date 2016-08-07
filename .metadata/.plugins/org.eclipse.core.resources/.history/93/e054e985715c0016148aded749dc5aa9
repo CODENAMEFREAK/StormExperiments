@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package foss.freak.bolt;
+
+/**
+ * @author codenamefreak
+ *
+ */
+public class FreakFilterBolt {
+
+}

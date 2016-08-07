@@ -1,0 +1,16 @@
+package foss.freak.test;
+
+import org.apache.log4j.Logger;
+
+public class LogMain {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+	Logger logger = Logger.getLogger(LogMain.class);
+
+	}
+
+}

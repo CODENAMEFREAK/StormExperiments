@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package foss.freak.bolt;
+
+import org.apache.storm.topology.IRichBolt;
+
+/**
+ * @author codenamefreak
+ *
+ */
+public class ChildBolt implements IRichBolt{
+	
+
+}

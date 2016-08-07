@@ -1,0 +1,20 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.CharSequence"><rhs name\="java.lang.StringBuilder"/></lhs><lhs name\="java.lang.AbstractStringBuilder"><rhs name\="java.lang.StringBuilder"/></lhs><lhs name\="java.lang.Appendable"><rhs name\="java.lang.StringBuilder"/></lhs><lhs name\="jpcap.NetworkInterface"><rhs name\="jpcap.NetworkInterface"/></lhs><lhs name\="java.util.Collection"><rhs name\="org.apache.storm.tuple.Values"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="org.apache.storm.tuple.Values"/></lhs><lhs name\="java.util.List"><rhs name\="org.apache.storm.tuple.Values"/></lhs><lhs name\="org.apache.storm.spout.ISpout"><rhs name\="foss.freak.spout.FreakSpout"/></lhs><lhs name\="org.apache.storm.topology.IComponent"><rhs name\="foss.freak.spout.FreakSpout"/><rhs name\="foss.freak.bolt.FreakFilterBolt"/><rhs name\="foss.freak.bolt.ChildBolt"/></lhs><lhs name\="org.apache.storm.topology.IRichSpout"><rhs name\="foss.freak.spout.FreakSpout"/></lhs><lhs name\="org.apache.storm.task.IBolt"><rhs name\="foss.freak.bolt.FreakFilterBolt"/><rhs name\="foss.freak.bolt.ChildBolt"/></lhs><lhs name\="org.apache.storm.topology.IRichBolt"><rhs name\="foss.freak.bolt.FreakFilterBolt"/><rhs name\="foss.freak.bolt.ChildBolt"/></lhs><lhs name\="java.util.Hashtable"><rhs name\="java.util.Properties"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.Properties"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="java.util.Properties"/></lhs><lhs name\="java.util.Dictionary"><rhs name\="java.util.Properties"/></lhs><lhs name\="java.util.Properties"><rhs name\="java.util.Properties"/></lhs><lhs name\="org.apache.log4j.Appender"><rhs name\="org.apache.log4j.FileAppender"/><rhs name\="org.apache.log4j.RollingFileAppender"/></lhs><lhs name\="org.apache.log4j.spi.OptionHandler"><rhs name\="org.apache.log4j.PatternLayout"/></lhs><lhs name\="org.apache.log4j.Layout"><rhs name\="org.apache.log4j.PatternLayout"/></lhs></history>
+content_assist_number_of_computers=13
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=60,60,60
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.ui.editor.tab.width=
+org.eclipse.jdt.ui.formatterprofiles.version=12
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+org.eclipse.jface.textfont=1|Monospace|10.0|0|GTK|1|;
+proposalOrderMigrated=true
+spelling_locale_initialized=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

@@ -1,0 +1,17 @@
+package foss.freak.capture;
+
+
+
+import jpcap.*;
+
+
+public class PacketCapturer {
+	
+	public static void main(String args[])
+	{
+		NetworkInterface[] device = JpcapCaptor.getDeviceList();
+		Jpcap jpcap = Jpcap.openDevice();
+		
+	}
+
+}

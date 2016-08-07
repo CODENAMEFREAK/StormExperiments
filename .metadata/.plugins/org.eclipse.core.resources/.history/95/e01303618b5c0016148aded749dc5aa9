@@ -1,0 +1,58 @@
+package foss.freak.topology;
+
+import java.io.IOException;
+
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.RollingFileAppender;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.storm.Config;
+import org.apache.storm.topology.TopologyBuilder;
+
+import foss.freak.bolt.ChildBolt;
+import foss.freak.bolt.FreakFilterBolt;
+import foss.freak.spout.FreakSpout;
+
+public class FreakStormTopology {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	final static Logger logger = Logger.getLogger(FreakStormTopology.class);
+	public static void main(String[] args) throws InterruptedException, IOException {	
+		
+		DOMConfigurator.configure("log4j.xml");
+		System.out.println(logger.getAllAppenders());
+		logger.info("Starting Configuring......");
+		
+		Config config = new Config();
+		config.put("", "");
+		config.setDebug(false);
+		config.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 1);
+		logger.info("Configuration Completed.");
+		
+		logger.info("Starting Building Topology.....");
+		TopologyBuilder builder = new TopologyBuilder();
+		logger.info("Setting Spout.");
+		builder.setSpout("reader", new FreakSpout());
+		logger.info("Spout set.");
+		logger.info("Setting Root Bolt.");
+		builder.setBolt("root-bolt", new FreakFilterBolt()).shuffleGrouping("reader");
+		logger.info("Root Bolt set.");
+		logger.info("Setting Child Bolt.");
+		builder.setBolt("child-bolt", new ChildBolt()).shuffleGrouping("root-bolt");
+		logger.info("Child Bolt set.");
+		
+		logger.info("Submitting Topology.");
+		/*LocalCluster cluster = new LocalCluster();
+		cluster.submitTopology("FreakStormTopology", config, builder.createTopology());
+		logger.info("Topology Submitted.");
+		Thread.sleep(100000);
+		cluster.shutdown();
+		*/logger.info("Cluster closed.");
+
+	}
+
+}

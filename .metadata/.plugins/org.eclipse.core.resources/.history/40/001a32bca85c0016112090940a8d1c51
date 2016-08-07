@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package foss.freak.sink;
+
+import org.apache.storm.topology.IRichBolt;
+
+/**
+ * @author codenamefreak
+ *
+ */
+public class FreakSink implements IRichBolt{
+
+	
+}

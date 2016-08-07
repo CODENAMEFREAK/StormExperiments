@@ -1,0 +1,15 @@
+package foss.freak.capture;
+
+import java.util.List;
+
+import jpcap.*;
+
+public class PacketCapturer {
+	
+	public static void main(String args[])
+	{
+		List<PcapIf> alldevs = new ArrayList<PcapIf>();
+		
+	}
+
+}

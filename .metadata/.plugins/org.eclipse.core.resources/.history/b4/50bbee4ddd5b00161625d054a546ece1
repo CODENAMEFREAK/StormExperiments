@@ -1,0 +1,10 @@
+package foss.freak.capture;
+
+public class PacketCapturer {
+	
+	public static void main(String args[])
+	{
+		
+	}
+
+}

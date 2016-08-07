@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package foss.freak.bolt;
+
+import java.util.Map;
+
+import org.apache.storm.task.OutputCollector;
+import org.apache.storm.task.TopologyContext;
+import org.apache.storm.topology.OutputFieldsDeclarer;
+import org.apache.storm.topology.base.BaseRichBolt;
+import org.apache.storm.tuple.Tuple;
+
+/**
+ * @author codenamefreak
+ *
+ */
+public class FreakFilterBolt extends BaseRichBolt{
+
+	private OutputCollector _collector = null;
+	@Override
+	public void execute(Tuple input) {
+		
+		
+	}
+
+	@Override
+	public void prepare(Map conf, TopologyContext context, OutputCollector collector) {
+		_collector = collector;
+		
+	}
+
+	@Override
+	public void declareOutputFields(OutputFieldsDeclarer arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

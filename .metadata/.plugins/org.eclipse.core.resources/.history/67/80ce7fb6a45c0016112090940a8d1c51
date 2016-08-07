@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package foss.freak.spout;
+
+import org.apache.storm.topology.IRichSpout;
+
+/**
+ * @author codenamefreak
+ *
+ */
+public class FreakSpout implements IRichSpout{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

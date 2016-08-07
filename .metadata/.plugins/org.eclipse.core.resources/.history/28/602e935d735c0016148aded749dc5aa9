@@ -1,0 +1,8 @@
+package foss.freak.spout;
+
+import org.apache.storm.topology.IRichSpout;
+
+public class FreakSpout implements IRichSpout{
+	
+
+}

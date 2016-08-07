@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package foss.freak.sink;
+
+/**
+ * @author codenamefreak
+ *
+ */
+public class FreakSink implements IRichBolt{
+
+	
+}

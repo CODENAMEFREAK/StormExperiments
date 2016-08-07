@@ -1,0 +1,54 @@
+package foss.freak.topology;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+import org.apache.storm.Config;
+import org.apache.storm.topology.TopologyBuilder;
+import org.apache.storm.tuple.Fields;
+
+import foss.freak.bolt.ChildBolt;
+import foss.freak.bolt.FreakFilterBolt;
+import foss.freak.spout.FreakEvenNumberSpout;
+import foss.freak.spout.FreakOddNumberSpout;
+
+public class FreakStormTopology {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	
+	public static void main(String[] args) throws InterruptedException, IOException {	
+		
+		
+		
+		
+		Config config = new Config();
+		config.put("", "");
+		config.setDebug(false);
+		config.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 1);
+		
+		
+		
+		TopologyBuilder builder = new TopologyBuilder();		
+		builder.setSpout("readerEven", new FreakEvenNumberSpout());
+		builder.setSpout("readerOdd", new FreakOddNumberSpout());
+		
+		
+		builder.setBolt("root-bolt", new FreakFilterBolt()).fieldsGrouping("readerEven", new Fields("even")).fieldsGrouping("readerOdd", new Fields("odd"));
+		
+		builder.setBolt("child-bolt", new ChildBolt()).shuffleGrouping("root-bolt");
+		
+		
+		
+		/*LocalCluster cluster = new LocalCluster();
+		cluster.submitTopology("FreakStormTopology", config, builder.createTopology());
+		logger.info("Topology Submitted.");
+		Thread.sleep(100000);
+		cluster.shutdown();
+		*/
+
+	}
+
+}
