@@ -19,14 +19,23 @@ import org.apache.storm.tuple.Values;
  */
 public class FreakFilterBolt extends BaseRichBolt{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9119846543008229881L;
 	private OutputCollector _collector = null;
 	@Override
 	public void execute(Tuple input) {		
 		int val = input.getInteger(0).intValue();
-		if(val%2==0)
-			_collector.emit("First", new Values(val));
+		System.out.print("Filter Bolt received\t"+val+"\t");
+		if(val%2==0)			
+		{	_collector.emit("EvenStream", new Values(val));
+		System.out.print("Forwarding on Even Stream\n");
+		}		
 		else
-			_collector.emit("Second", new Values(val));		
+			{_collector.emit("OddStream", new Values(val));	
+			System.out.print("Forwarding on Odd Stream\n");
+			}	
 		_collector.ack(input);
 	}
 
@@ -37,8 +46,8 @@ public class FreakFilterBolt extends BaseRichBolt{
 
 	@Override
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
-		declarer.declareStream("First", new Fields("value1"));
-		declarer.declareStream("Second", new Fields("value2"));
+		declarer.declareStream("EvenStream", new Fields("evenvalue"));
+		declarer.declareStream("OddStream", new Fields("oddvalue"));
 	}
 
 }
