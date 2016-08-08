@@ -40,7 +40,7 @@ public class FreakOddBolt implements IRichBolt{
 	@Override
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
 		
-		declarer.declare(new Fields("values"));
+		declarer.declare(new Fields("oddvalues"));
 	}
 
 	@Override
