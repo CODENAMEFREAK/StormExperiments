@@ -32,13 +32,14 @@ public class FreakEvenBolt implements IRichBolt{
 
 	@Override
 	public void prepare(Map conf, TopologyContext context, OutputCollector collector) {
+		
 		_collector = collector;		
 	}
 
 	@Override
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
 		
-		declarer.declare(new Fields("values"));
+		declarer.declare(new Fields("evenvalues"));
 	}
 
 	@Override
